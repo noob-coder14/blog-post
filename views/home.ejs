@@ -1,16 +1,25 @@
 <html>
-    <head>
-        <% include ./partials/header.ejs %>
-    </head>
+
+<head>
+    <% include ./partials/header.ejs -%>
+</head>
 
 <body>
+
+    <!-- <% var x=0; %> -->
+
+    <h1>Home</h1><br>
+
+    <!-- <p><%= starthome %></p> -->
+
+    <% for (var x = 0; x<posts.length; x++ ){ %>
+    <h4><%= posts[x].profileData %></h4>
+    <p><%= posts[x].composedData.substring(0,100) + "..." %>
+         <a href="/posts/<%= posts[x].profileData %>">Read More</a></p><br>
+    <% }; %>
     
-
-
-<h1>Home</h1>
-
-<p><%= starthome %></p>
-
-<% include ./partials/footer.ejs %>
+    <% include ./partials/footer.ejs -%>
 </body>
+
 </html>
+
